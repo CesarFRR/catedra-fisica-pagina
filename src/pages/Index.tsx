@@ -1,16 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import WhatIsSection from "@/components/WhatIsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import UseCasesSection from "@/components/UseCasesSection";
+import TeamSection from "@/components/TeamSection";
+import Footer from "@/components/Footer";
+import { Microscope } from "lucide-react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Microscope className="w-5 h-5 text-primary" />
+            <span className="font-heading font-bold text-lg text-foreground">MicroLens</span>
+          </div>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+            <a href="#como-funciona" className="hover:text-foreground transition-colors">Cómo funciona</a>
+            <a href="#equipo" className="hover:text-foreground transition-colors">Equipo</a>
+          </div>
+        </div>
+      </nav>
+
+      <main className="pt-16">
+        <HeroSection />
+        <WhatIsSection />
+        <HowItWorksSection />
+        <UseCasesSection />
+        <TeamSection />
+      </main>
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
